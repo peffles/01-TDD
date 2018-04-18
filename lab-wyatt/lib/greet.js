@@ -1,8 +1,6 @@
 'use strict';
 
-const greet = module.exports = {};
-
-greet.hi = (name) => {
+const greet = function greet(name) {
   if (typeof name !== 'string' || name === '') {
     return null;
   }
@@ -10,7 +8,10 @@ greet.hi = (name) => {
   return `Hello, ${name}!`;
 };
 
-greet.hi('wyatt');
-greet.hi('world');
-greet.hi(8);
-greet.hi('');
+module.exports = greet;
+
+greet('wyatt');
+greet('world');
+greet(8);
+greet('');
+
